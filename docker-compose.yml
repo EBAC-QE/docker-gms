@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./golden-movie-studio-backend
+    ports:
+      - "3001:3001"
+
+  frontend:
+    build: ./golden-movie-studio-frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
